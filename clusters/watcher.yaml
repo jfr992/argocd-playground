@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cluster-watcher
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: "."
+spec:
+  project: argocd
+  source:
+    repoURL: 'https://gitlab.com/yumbrands/yumdev/yumsre-infraops/operations-infra.git'
+    targetRevision: main
+    path: shared-services/helm/shared-services-tools/helm/argocd/clusters/
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
