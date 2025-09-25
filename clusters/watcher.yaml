@@ -8,9 +8,9 @@ metadata:
 spec:
   project: argocd
   source:
-    repoURL: 'https://gitlab.com/yumbrands/yumdev/yumsre-infraops/operations-infra.git'
+    repoURL: 'https://github.com/jfr992/argocd-playground.git'
     targetRevision: main
-    path: shared-services/helm/shared-services-tools/helm/argocd/clusters/
+    path: clusters/
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
