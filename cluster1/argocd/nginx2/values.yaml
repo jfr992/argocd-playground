@@ -1,15 +1,16 @@
-service:
-  type: ClusterIP
-  port: 80
+nginx:
+  service:
+    type: ClusterIP
+    port: 80
 
-replicaCount: 1
+  replicaCount: 1
 
-## Override the Bitnami nginx default page
-serverBlock: |
-  server {
-    listen 0.0.0.0:8080;
-    location / {
-      return 200 'Hello World from Argo CD!';
-      add_header Content-Type text/plain;
+  ## Override the Bitnami nginx default page
+  serverBlock: |
+    server {
+      listen 0.0.0.0:8080;
+      location / {
+        return 200 'Hello World from Argo CD!';
+        add_header Content-Type text/plain;
+      }
     }
-  }
