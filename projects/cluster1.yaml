@@ -12,13 +12,9 @@ spec:
   destinations:
     - name: '*'
       namespace: '*'
-      server: https://3F4DEAACBFA357325193AC6B28FF91A8.gr7.us-east-1.eks.amazonaws.com
+      server: https://cluster1-control-plane:6443
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - https://gitlab.com/yumbrands/yumdev/yumsre-infraops/operations.git
-    - https://gitlab.com/yumbrands/yumdev/yumsre-infraops/operations-infra.git
-    - https://gitlab.com/yumbrands/yumdev/yumsre-infraops/operations-ecommerce.git
-    - https://gitlab.com/yumbrands/yumdev/yumsre-infraops/operations-platform.git
-    - s3://yc-commerce-nonprod-helm-repo/charts
+    - https://github.com/jfr992/argocd-playground.git
